@@ -14,3 +14,11 @@ data_validation:
     train: artifacts/data_ingestion/train.csv
     test: artifacts/data_ingestion/test.csv
   STATUS_FILE: artifacts/data_validation/status.txt
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_dirs:
+    features: artifacts/data_ingestion/features.csv
+    stores: artifacts/data_ingestion/stores.csv
+    train: artifacts/data_ingestion/train.csv
+    test: artifacts/data_ingestion/test.csv

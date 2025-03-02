@@ -14,8 +14,18 @@ class DataValidationConfig:
     STATUS_FILE: str
     all_schema: dict
     data_dirs: dict = field(default_factory= lambda: {
-        'features': None,
-        'stores': None,
-        'train': None,
-        'test': None
+        'features': Path,
+        'stores': Path,
+        'train': Path,
+        'test': Path
+    })
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_dirs: dict = field(default_factory= lambda: {
+        'features': Path,
+        'stores': Path,
+        'train': Path,
+        'test': Path
     })
