@@ -5,3 +5,12 @@ data_ingestion:
   source_URL: "https://github.com/HarshVBhatt/walmart-sales-forecast-mlops/raw/refs/heads/main/raw_data.zip"
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  data_dirs:
+    features: artifacts/data_ingestion/features.csv
+    stores: artifacts/data_ingestion/stores.csv
+    train: artifacts/data_ingestion/train.csv
+    test: artifacts/data_ingestion/test.csv
+  STATUS_FILE: artifacts/data_validation/status.txt

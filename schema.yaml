@@ -1,1 +1,38 @@
-key: val
+features:
+  COLUMNS:
+    Store: int64
+    Date: object
+    Temperature: float64
+    Fuel_Price: float64
+    MarkDown1: float64
+    MarkDown2: float64
+    MarkDown3: float64
+    MarkDown4: float64
+    MarkDown5: float64
+    CPI: float64
+    Unemployment: float64
+    IsHoliday: bool
+
+stores:
+  COLUMNS:
+    Store: int64
+    Type: object
+    Size: int64
+
+train:
+  COLUMNS:
+    Store: int64
+    Dept: int64
+    Date: object
+    IsHoliday: bool
+    Weekly_Sales: float64
+
+  TARGET_COLUMN:
+    name: Weekly_Sales
+
+test:
+  COLUMNS:
+    Store: int64
+    Dept: int64
+    Date: object
+    IsHoliday: bool
