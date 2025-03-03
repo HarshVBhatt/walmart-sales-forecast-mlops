@@ -31,7 +31,7 @@ class ModelTrainer:
         test_y = test_df[target_col]
 
         pipeline = make_pipeline(ColumnTransformer([("num", MinMaxScaler(), [c for c in numerical_cols if c not in cycl_num_cols])]),
-                                 LGBMRegressor(n_jobs=-1, random_state=100))
+                                 LGBMRegressor(n_jobs=-1, random_state=100, n_estimators = self.config.n_estimators, learning_rate = self.config.learning_rate))
         regressor = pipeline.fit(train_x, train_y)
         model_instance = regressor.named_steps["lgbmregressor"]
 

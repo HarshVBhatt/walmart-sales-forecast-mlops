@@ -29,3 +29,10 @@ model_trainer:
   test_data_path: artifacts/data_transformation/final_test_data.csv
   pipeline_name: regressor_pipeline.pkl
   model_instance_name: model.pkl
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  test_data_path: artifacts/data_transformation/final_test_data.csv
+  pipeline_path: artifacts/model_trainer/regressor_pipeline.pkl
+  model_instance_path: artifacts/model_trainer/model.pkl
+  metrics_file_name: artifacts/model_evaluation/metrics.json
