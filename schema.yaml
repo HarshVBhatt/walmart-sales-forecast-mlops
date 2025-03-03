@@ -27,8 +27,8 @@ train:
     IsHoliday: bool
     Weekly_Sales: float64
 
-  TARGET_COLUMN:
-    name: Weekly_Sales
+TARGET_COLUMN:
+  name: Weekly_Sales
 
 test:
   COLUMNS:

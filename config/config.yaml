@@ -22,3 +22,10 @@ data_transformation:
     stores: artifacts/data_ingestion/stores.csv
     train: artifacts/data_ingestion/train.csv
     test: artifacts/data_ingestion/test.csv
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  train_data_path: artifacts/data_transformation/final_train_data.csv
+  test_data_path: artifacts/data_transformation/final_test_data.csv
+  pipeline_name: regressor_pipeline.pkl
+  model_instance_name: model.pkl
