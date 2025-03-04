@@ -146,7 +146,7 @@ class DataTransformation:
         logger.info("Temporal, lagged and rolling statistic features added.")
 
     def cat_encoding(self):
-        df = pd.read_csv(os.path.join(self.config.root_dir, "processed_data.csv"))
+        df = pd.read_csv(os.path.join(self.config.root_dir, "features_processed.csv"))
 
         type_encoded = pd.get_dummies(df["Type"], dtype=int, prefix="Type")
         df = pd.concat([df, type_encoded], axis = 1)
@@ -156,7 +156,7 @@ class DataTransformation:
         logger.info("Categorical features encoded.")
 
     def split_sim_data(self):
-        df = pd.read_csv(os.path.join(self.config.root_dir, "processed_data.csv"))
+        df = pd.read_csv(os.path.join(self.config.root_dir, "features_processed.csv"))
         df_sim= df.loc[df["Date"] >= "2012-07-10"]
         df_train = df.drop(index = df_sim.index)
 
