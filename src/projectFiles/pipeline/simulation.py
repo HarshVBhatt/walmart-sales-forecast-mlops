@@ -12,8 +12,6 @@ import warnings
 warnings.filterwarnings("ignore")
 
 def run_sim():
-    logger.info("Starting simulation....")
-
     create_directories(["artifacts/simulation"])
     create_directories(["artifacts/simulation/temp"])
 
