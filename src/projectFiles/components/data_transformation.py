@@ -3,6 +3,8 @@ from projectFiles import logger
 import pandas as pd
 import math
 from projectFiles.entity.config_entity import DataTransformationConfig
+from pathlib import Path
+import boto3
 
 class DataTransformation:
     def __init__(self, config: DataTransformationConfig):
@@ -172,3 +174,15 @@ class DataTransformation:
         train_df.to_csv(os.path.join(self.config.root_dir, "final_train_data.csv"), index = False)
         test_df.to_csv(os.path.join(self.config.root_dir, "final_test_data.csv"), index = False)
         logger.info(f"Further split of model building data for training ({train_df.shape[0]} samples) and testing ({test_df.shape[0]} samples) completed")
+
+    def push_to_s3(self):
+        s3 = boto3.client('s3')
+        bucket_name = "walmart-sales-forecast-proj"
+        object_path = Path("artifacts/data_transformation/final_train_data.csv")
+        key = "train_data.csv"
+
+        try:
+            s3.upload_file(object_path, bucket_name, key)
+            logger.info(f"final_train_data.csv uploaded successfully to s3 bucket '{bucket_name}' as '{key}'")
+        except Exception as e:
+            print(f"Error uploading file: {e}")

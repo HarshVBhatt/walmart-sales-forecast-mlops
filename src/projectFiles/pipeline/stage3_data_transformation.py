@@ -25,6 +25,7 @@ class DataTransformationPipeline:
                 data_transformation.cat_encoding()
                 data_transformation.split_sim_data()
                 data_transformation.split_train_test()
+                data_transformation.push_to_s3()
 
             else:
                 raise Exception("Data schema is invalid. Refer artifacts/data_validation/status.txt for detailed information")

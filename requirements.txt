@@ -13,4 +13,6 @@ types-PyYAML
 Flask
 Flask-Cors
 lightgbm
+boto3
+warnings
 -e .
