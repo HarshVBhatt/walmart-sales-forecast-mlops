@@ -41,7 +41,7 @@ def run_sim():
         
         train_df.to_csv(full_data_path, index = False)
         s3.upload_file(full_data_path, bucket_name, full_data_key)
-        logger.info("Full data file in s3 updated")
+        logger.info("Succesfully updated full data file in s3")
 
         chunk_path = f"artifacts/simulation/temp/chunk_{date}.csv"
         batch.to_csv(chunk_path, index = False)
