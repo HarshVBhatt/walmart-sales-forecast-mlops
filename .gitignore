@@ -163,3 +163,5 @@ cython_debug/
 #.idea/
 
 artifacts/*
+
+raw_data.zip
