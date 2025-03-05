@@ -85,12 +85,11 @@ export MLFLOW_TRACKING_PASSWORD=########
 
 ## 2. Create IAM user for deployment
 
-	#with specific access
+	#Policy:
 
-	1. EC2 access : It is virtual machine
+	1. AmazonEC2ContainerRegistryFullAccess
 
-	2. ECR: Elastic Container registry to save your docker image in aws
-
+	2. AmazonEC2FullAccess
 
 	#Description: About the deployment
 
@@ -104,15 +103,9 @@ export MLFLOW_TRACKING_PASSWORD=########
 
 	5. Lauch your docker image in EC2
 
-	#Policy:
-
-	1. AmazonEC2ContainerRegistryFullAccess
-
-	2. AmazonEC2FullAccess
-
 	
 ## 3. Create ECR repo to store/save docker image
-    - Save the URI: 050451357525.dkr.ecr.us-east-2.amazonaws.com/walmart-sales-forecast
+    - Save the URI: 050451357525.dkr.ecr.us-east-2.amazonaws.com/repo-name
 
 	
 ## 4. Create EC2 machine (Ubuntu) 
@@ -120,7 +113,7 @@ export MLFLOW_TRACKING_PASSWORD=########
 ## 5. Open EC2 and Install docker in EC2 Machine:
 	
 	
-	#optinal
+	#optional
 
 	sudo apt-get update -y
 
@@ -151,14 +144,3 @@ export MLFLOW_TRACKING_PASSWORD=########
     AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
 
     ECR_REPOSITORY_NAME = simple-app
-
-
-
-
-## About MLflow 
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & tagging your model
-
