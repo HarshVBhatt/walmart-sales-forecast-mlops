@@ -15,5 +15,4 @@ Flask-Cors
 flask_socketio
 lightgbm
 boto3
-warnings
 -e .
